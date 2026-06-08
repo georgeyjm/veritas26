@@ -1,0 +1,181 @@
+\documentclass{article}
+
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+
+\renewcommand{\baselinestretch}{1.3}
+%\setlength{\parindent}{0em}
+
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%\setCJKmainfont{Source Han Serif SC}[
+%  BoldFont   = Source Han Serif SC Bold,
+%%  ItalicFont = FZSongKeBenXiuKaiS-R-GB,
+%  ItalicFont = FZJuZhenXinFangK,%Kaiti SC,
+%]
+%\setCJKsansfont{Source Han Serif SC}[
+%  BoldFont   = Source Han Serif SC,
+%  ItalicFont = LXGW WenKai Mono,
+%]
+%\usefonttheme{serif}
+
+
+\title{\textbf{精确的逻辑与模糊的意义}}
+\author{2026年唯理暑期⼯作坊}
+\date{讲师：于佳铭}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{课程简介}
+
+“一句话要么是真的，不然就是假的。”这听上去像是某种废话文学。但从哲学和逻辑的角度来说，我们需要思考：一句话是否可以既真又假？可以既不真也不假么？60\%真呢？再比如，当我们作出对于可能性描述的反事实陈述时，我们又从何推断其真假？逻辑学试图提供一个对于自然语言的意义完全精确的描述：每个陈述句都非真即假、推理必须依据逻辑规则。但自然语言却远不止这样简单二元——它模糊、歧义、充斥着语境依赖。于是哲学家不得已发明新的工具对逻辑学修修补补：多值逻辑、模态逻辑、可能世界语义学……这些“补丁”有些堪称精妙有些又很是牵强，而其背后是自然语言的模糊性与逻辑学的精确性之间的相互牵制。
+
+这节课不应被当作纯粹的语言哲学课程，也不应被当作纯粹的逻辑学课程。这节课更希望探究的是两个领域的重合，探讨自然语言的语言哲学中有不少需要逻辑学来辅佐的内容，但却又同时受限于逻辑学过度的精确性。我们会尝试将语言哲学中的许多课题尝试用逻辑学形式化，但也不会过度注重逻辑学中的细枝末节和证明系统。
+
+这节课程将带领学员深入探讨这些语言中的复杂性以及逻辑学中相对应的解释。我们不仅要学会这些逻辑学框架的定义和使用，更要追问这些框架本身是否巧妙地捕捉了语言的意义，还是只是作为权宜之计的“补丁”。
+
+
+\section*{讲师介绍}
+
+本硕毕业于牛津大学数学与哲学专业，主要研究方向为数学哲学、语言哲学、逻辑学、集合论。在校期间研究并撰写过数篇语言哲学相关长篇论文，包括反事实条件以及大语言模型的哲学讨论。毕业后从事人工智能安全方向研究。
+
+
+%\section*{时间表}
+%
+%\begin{table}[H]
+%\centering
+%\begin{tabular}{c|l|l}
+%\textbf{日期} &  & \textbf{主题} \\\hline
+%7.20 &  & 逻辑学基础 \\
+%7.21 &  &       \\
+%7.22 &  &       \\
+%7.23 &  &       \\
+%7.24 &  &       \\
+%7.25 &  &       \\
+%7.26 &  &       \\
+%7.27 &  &      
+%\end{tabular}
+%\end{table}
+
+
+\newpage
+\section*{课程大纲}
+
+\subsection*{第一天：哲学的语言转向与逻辑学基础}
+
+分析哲学在上世纪经历了一场语言转向。哲学家们热衷于将注意力转移到我们用来描述一切的语言上，他们认为许多悬而未决的哲学问题本质是语言使用的模糊与混乱，而我们应当、也能够通过分析我们的语言来使这些问题迎刃而解。维特根斯坦甚至认为：凡是能够说的，都能够说清楚；而说不清楚的，就应保持沉默。因此，用逻辑学精确的语言来形式化自然语言，不仅是解决哲学问题的有效途径，更是必要的哲学方法论。然而，这场语言转向是否合理？
+
+我们将由命题逻辑引入，并介绍一阶逻辑的基本概念、语法和语义。我们将尝试对一些简单的自然语言语句进行形式化，并分析歧义会如何产生不同的形式化语句。此外，我们会简单引入一些语言哲学里的问题和概念，例如Frege的Sinn/Bedeutung的区分（以及它和能指/所指区分的差异）、命题态度。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Frege, Gottlob. \textit{On Sense and Reference}.
+  \item Russell, Bertrand. \textit{Logic as the Essence of Philosophy}.
+\end{itemize}
+
+%\subsubsection*{作业}
+%\paragraph*{课后练习}
+%\begin{itemize}
+%  \item 形式化不同的自然语言语句，包括含有歧义的语句
+%\end{itemize}
+
+
+\subsection*{第二天：空指称与摹状词理论}
+
+空名在语言哲学里是个悠久且困难的问题。对于含有空名的句子，包括那些明显为真的句子，我们该如何用形式化的方式判断其真假？类似地，当句子含有空的限定摹状词时，我们又该如何去理解和分析它？Russell较为激进地认为所有限定摹状词都是量化命题的伪装，这个理论有其逻辑学上的优美，但同时也带来了一些问题。
+
+本节课将介绍专名、摹状词等基本概念，并讨论当这些指称为空时，我们该如何诠释以及形式化含有它们的句子。我们将着重介绍并分析Meinong的非存在对象理论与Russell的摹状词理论。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Lycan, William G. \textit{Philosophy of Language: A Contemporary Introduction}. Chapters~2,~3.
+\end{itemize}
+
+
+\subsection*{第三天：模糊性与多值逻辑}
+
+逻辑学希望能将任意自然语言的语句都精确地描述，然而自然语言中充斥了模糊的概念。
+
+本节课将讨论形式化模糊谓词带来的谷堆悖论，并介绍三种应对该悖论的策略：三值逻辑（{\L}ukasiewicz、Kleene）、模糊逻辑与超赋值语义。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Sider, Theodore. \textit{Logic for Philosophy}. Section 3.3--3.4.
+\end{itemize}
+
+
+\subsection*{第四天：说谎者悖论}
+
+大名鼎鼎的说谎者悖论简单又足以颠覆传统的二元逻辑。这个悖论不需要诉诸外界世界的模糊性与连续性，它仅凭逻辑系统本身的规则就能够造成逻辑系统的坍塌。
+
+我们是否可以用多值逻辑的策略来应对说谎者悖论？本节课将探讨对于说谎者悖论的不同应对方法。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Sider, Theodore. \textit{Logic for Philosophy}. Section 3.4.
+  \item Sainsbury, R.M. \textit{Paradoxes}. Chapter 6.
+\end{itemize}
+
+
+\subsection*{第五天：模态逻辑与可能世界语义学}
+
+一阶逻辑的表达能力已经非常强大，但却无法捕捉到自然语言中对于可能性和必然性的使用。模态逻辑由此诞生，但模态算子也不仅仅只能被理解为可能性和必然性。有了模态算子，其语义又该如何理解？为此，多数哲学家选择诉诸Lewis的可能世界理论，并由此发展出一套完整的模态逻辑系统。
+
+本节课将引入模态算子$\Box$和$\Diamond$并介绍模态逻辑的基础。同时，我们将介绍Lewis可能世界理论、其在模态逻辑语义学里的角色、以及不同可及关系所决定的不同模态系统。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Sider, Theodore. \textit{Logic for Philosophy}. Chapters 6, 7.
+\end{itemize}
+
+
+\subsection*{第六天：条件语句*}
+
+条件语句作为命题逻辑中最基础的元素之一，却极富争议。根据条件蕴含的真值表，任意前件为假的条件语句均为真，这在很多情况下是反直觉的。
+
+本节课将讨论自然语言中材料蕴含的各种变体：陈述语气与虚拟语气的区别、严格条件句。此外，我们将探讨材料蕴含的失败、三值条件句、以及Adams概率语义。
+
+
+\subsection*{第七天：反事实条件句}
+
+反事实条件句是个自然语言中常见但又很特殊的现象。它虽然拥有和普通实质蕴含句极为相似的表达形式，却需要截然不同的语义理论来诠释和形式化。%Stalnaker和Lewis在对反事实条件的
+
+本节课将区分实质条件、严格条件、与反事实条件。我们将学习Stalnaker和Lewis对于世界相似度关系定义的区别，并比较这两个不同的反事实条件阐释所带来的后果。
+
+\paragraph*{补充阅读}
+\begin{itemize}
+  \item Sider, Theodore. \textit{Logic for Philosophy}. Chapter 8.
+\end{itemize}
+
+
+\subsection*{第八天：自选话题讨论课}
+
+本节课将主要由学员主导，介绍并讨论自选的某一话题（部分话题如下）。学员也将结合前几门课的内容综合讨论语言哲学与逻辑学之间的关系，并批判哲学的语言转向的好与坏。
+\begin{itemize}
+  \item 索引词（Indexicals）与指示代词（Demonstratives）
+  \item 二维语义学
+  \item 大语言模型
+\end{itemize}
+
+
+%- 逻辑学基础
+%- 限定摹狀詞、空指称和罗素的解决方案
+%- 谷堆悖论
+%- 说谎者悖论
+%- 可能世界语义学与模态逻辑基础
+%- 反事实陈述
+
+
+
+
+
+\end{document}
