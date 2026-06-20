@@ -1,0 +1,291 @@
+\documentclass{zhslides}
+
+\usepackage{logic}
+
+
+\title{Day 1: 哲学的语言转向与逻辑学基础}
+%\subtitle{}
+\date{\today}
+\date{2026年7月20日}
+\author{于佳铭}
+\institute{唯理中国2026试讲}
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{目录}
+%  \tableofcontents
+%\end{frame}
+
+% 可以用 \alert{} 来高亮
+
+
+
+\section{语言为什么是个问题？}
+
+\begin{frame}{语言为什么是个问题？}
+
+  \textbf{语言富有歧义}
+  \pause
+  
+  \vspace{1em}
+  \begin{quote}
+    我买了橙子或苹果。
+  \end{quote}
+  \vspace{1em}\pause
+  \begin{quote}
+    每个孩子都喜欢一个玩具。
+  \end{quote}
+%  \begin{quote}
+%    每个学生都没有通过某门考试。
+%  \end{quote}
+  \vspace{1em}\pause
+  \begin{quote}
+    每个人都在享受着好时光。
+  \end{quote}
+
+\end{frame}
+
+
+
+\begin{frame}{语言为什么是个问题？}
+  
+  \textbf{语言是不精确、混乱的}
+  \pause
+  
+  \vspace{1em}
+  \begin{quote}
+    天空和草地是同一个颜色。
+  \end{quote}
+  \pause
+  \bit
+    \item 中文里区分“蓝”“绿”，而古日语里只用“青”一种颜色\footnote[frame]{\url{https://en.wikipedia.org/wiki/Blue\%E2\%80\%93green_distinction_in_language}}
+    \item 语言在描述世界的同时也在构建我们对世界的理解
+  \eit
+
+\end{frame}
+
+
+\begin{frame}[t]{哲学的语言转向}
+
+  \vspace{2em}
+  \begin{brainstorm*}{}
+    为什么语言的不精确对于哲学可能是个问题？
+  \end{brainstorm*}
+
+  \pause
+  \only<2>{
+  \bit
+    \item 传统哲学：心灵是什么？自由意志存在吗？道德真理是客观的吗？
+  \eit
+  }
+  
+  \bit
+    \item 早期维特根斯坦（《逻辑哲学论》）：语言图像论
+      \bit
+        \item 任何有意义的命题对应世界的某个状态（\term{逻辑图像}）
+        \item 乐谱——交响乐
+        \item 哲学问题可以通过形式化语言迎刃而解
+        \item \textit{“我语言的界限就是我世界的界限。”}
+      \eit
+      \vspace{0.5em}
+    \item 罗素（\textit{Our Knowledge of the External World}）
+      \bit
+        \item 自然语言阻碍我们认识到现实世界的\term{逻辑形式}{logical form}
+        \item 哲学的困惑源自语言的逻辑与现实经验的不对等
+      \eit
+  \eit
+
+\end{frame}
+
+
+\begin{frame}[t]{哲学的语言转向}
+
+  \vspace{2em}
+  \begin{brainstorm*}{}
+    为什么语言的不精确对于哲学可能是个问题？
+  \end{brainstorm*}
+
+\bit
+  \item 晚期维特根斯坦（《哲学研究》）：语言游戏论
+    \bit
+      \item 意义即图像 \raisebox{0.2ex}{$\longrightarrow$} 意义即使用
+    \eit
+\eit
+
+\end{frame}
+
+
+
+
+
+
+\section{逻辑学基础}
+
+\begin{frame}{逻辑学基础}
+  \bit
+    \item 经典逻辑的研究对象和基本单位：\term{命题}{proposition}
+    \item 命题是能够判断真假（记作$1, 0$或$\true, \false\hspace{0.1em}$）的陈述句
+    \item \term{形式化语言}{formal language}是用精确的公式与规则定义的语言
+    \item 我们用字母表示命题：$P, Q, R, P_1, P_2, \dots$
+  \eit
+\end{frame}
+
+
+\begin{frame}[t]{逻辑学基础}
+  
+  \vspace{2em}
+  \begin{brainstorm*}{}
+    为什么我们想要一个形式化语言？
+  \end{brainstorm*}
+  \vspace{1em}
+  
+  \begin{quote}
+    如果下雨，我就带伞。我带了伞。所以，下雨了。
+  \end{quote}
+  \vspace{1em}\pause
+  \begin{quote}
+    猫都是动物。狗都是动物。所以，猫都是狗。
+  \end{quote}
+  \vspace{1em}\pause
+  \begin{quote}
+    没有狗能飞。没有猫是狗。所以，猫都能飞。
+  \end{quote}
+
+\end{frame}
+
+
+\begin{frame}{命题逻辑符号}
+  
+  \begin{table}[h]
+  \centering
+  {\renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{llc}
+    \textbf{自然语言对应} & \textbf{名称} & \textbf{逻辑符号} \\\hline
+    不 & 逻辑非 & $\neg$ \\\pause
+    并且 & 逻辑与 & $\land$ \\\pause
+    或者 & 逻辑或 & $\lor$ \\\pause
+    如果……那么…… & 材料蕴含 & $\implies$
+  \end{tabular}
+  }
+  \end{table}
+  
+\end{frame}
+
+
+\begin{frame}{真值表}
+
+  \begingroup
+  \setlength{\tabcolsep}{4pt}
+  \begin{table}[h]
+  \centering
+  \begin{tabular}{c|c}
+    $\neg$ & \\\hline
+    1 & 0 \\
+    0 & 1
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|cc}
+    $\land$ & 1 & 0 \\\hline
+    1 & 1 & 0 \\
+    0 & 0 & 0
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|cc}
+    $\lor$ & 1 & 0 \\\hline
+    1 & 1 & 1 \\
+    0 & 1 & 0
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|cc}
+    $\implies$ & 1 & 0 \\\hline
+    1 & 1 & 0 \\
+    \only<1>{0 & 1 & 1}
+%    \only<2>{\rowcolor{yellow} 0 & 1 & 1}
+  \end{tabular}
+  \end{table}
+  \endgroup
+
+\end{frame}
+
+
+\begin{frame}{逻辑形式化}
+
+  \begin{quote}
+    如果下雨，我就带伞。我带了伞。所以，下雨了。
+  \end{quote}
+  \vspace{0.5em}\pause
+  \begin{quote}
+    $R \implies S,\ S$ \\
+    $\therefore R$
+  \end{quote}
+  
+  \vspace{1em}\pause
+  \begin{quote}
+    猫都是动物。狗都是动物。所以，猫都是狗。
+  \end{quote}
+  \vspace{1em}\pause
+  \begin{quote}
+    没有狗能飞。没有猫是狗。所以，猫都能飞。
+  \end{quote}
+
+\end{frame}
+
+
+\begin{frame}{一阶逻辑符号}
+  
+  \begin{table}[h]
+  \centering
+  {\renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{llc}
+    \textbf{自然语言对应} & \textbf{名称} & \textbf{逻辑符号} \\\hline
+    存在 & 存在量词 & $\exists$ \\\pause
+    任意/所有 & 全称量词 & $\forall$ \\
+  \end{tabular}
+  }
+  \end{table}
+  
+\end{frame}
+
+
+\begin{frame}{一阶逻辑形式化}
+
+  \begin{quote}
+    一个男人抽烟。
+  \end{quote}
+  
+  \vspace{1em}\pause
+  \begin{quote}
+    每个孩子都拥有一些玩具。
+  \end{quote}
+  
+  \vspace{1em}\pause
+  \begin{quote}
+    每个孩子都喜欢一个玩具。
+  \end{quote}
+
+  \vspace{1em}\pause
+  \begin{quote}
+    每个人都在享受着好时光。
+  \end{quote}
+
+  \vspace{1em}\pause
+  \begin{quote}
+    Every farmer who owns a donkey beats it.
+  \end{quote}
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
