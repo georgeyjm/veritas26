@@ -1,0 +1,60 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{logic}
+
+\RequirePackage{bussproofs}
+\RequirePackage{hhline}
+\RequirePackage{array}
+\RequirePackage{siunitx}
+
+%\newcommand{\LL}[1][]{\mathcal{L}_{#1}}
+%\newcommand{\Lone}{\LL[1]}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\Lprop}{\LL_\textrm{prop}}
+\newcommand{\struct}[1]{\mathcal{#1}}
+\newcommand{\tostruct}[2]{#1^\struct{#2}}
+\newcommand{\valunder}[2]{\abs{#1}_\struct{#2}}
+\newcommand{\SQ}{\mathrm{SQ}}
+
+\newcommand{\true}{\textit{T}}
+\newcommand{\false}{\textit{F}}
+\newcommand{\hash}{\scalebox{0.8}[0.9]{\raisebox{0.2ex}{\textbf{\#}}}}
+\newcommand{\settf}{\set{\true, \false}}
+\newcommand{\settfh}{\set{\true, \false, \hash}}
+
+\renewcommand{\implies}{\rightarrow}
+\renewcommand{\iff}{\leftrightarrow}
+\renewcommand{\models}{\mathrel{|}\joinrel\mkern-.5mu\mathrel{=}} % Connect two parts
+\newcommand{\entails}{\models}
+\newcommand{\proves}{\mathrel{|}\joinrel\mkern-1mu\mathrel{-}} % Bigger than \vDash, consistent with \models
+\newcommand{\lequiv}{\models\mkern-5mu\mathrel{\text{\reflectbox{$\models$}}}}
+\newcommand{\logeq}{\dot=}
+\newcommand{\oset}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\conj}{\bigwedge}
+\newcommand{\disj}{\bigvee}
+
+\newcommand{\val}[1][v]{\tilde{#1}}
+
+\DeclareMathOperator{\conn}{Conn}
+\DeclareMathOperator{\sls}{SenLett}
+\DeclareMathOperator{\comp}{Comp}
+\DeclareMathOperator{\formulas}{Form}
+\DeclareMathOperator{\sents}{Sent}
+\DeclareMathOperator{\terms}{Term}
+\DeclareMathOperator{\preds}{Pred}
+\DeclareMathOperator{\funcs}{Func}
+\DeclareMathOperator{\consts}{Const}
+\DeclareMathOperator{\free}{Free}
+\DeclareMathOperator{\theory}{Th}
+
+%\newlist{axioms}{enumerate}{1}
+%\setlist[axioms]{label=\textbf{A\arabic*},left=1em,labelsep=1em}
+%\newlist{pfcases}{enumerate}{1}
+%\setlist[pfcases]{label=\textit{Case \arabic*:},left=0em}
+
+%%% Custom derivation environments (w/ or w/o automatic step numbering)
+\preto\tabular{\setcounter{theproofstep}{0}}
+\newcounter{theproofstep}
+\newcommand\proofstep{\stepcounter{theproofstep}\arabic{theproofstep}}
+\newenvironment{derivation}{\renewcommand{\arraystretch}{0.9}\setlength{\tabcolsep}{12pt}\begin{center}\begin{tabular}{>{\makebox[0em][r]{\footnotesize\proofstep}\hspace{2\tabcolsep}} l >{\footnotesize}l}}{\end{tabular}\end{center}\vspace{0.5em}}
+\newenvironment{derivation*}{\renewcommand{\arraystretch}{0.9}\setlength{\tabcolsep}{12pt}\begin{center}\begin{tabular}{>{\footnotesize}l l >{\footnotesize}l}}{\end{tabular}\end{center}\vspace{0.5em}}
