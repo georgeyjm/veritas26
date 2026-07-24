@@ -1,0 +1,102 @@
+\documentclass{quiz}
+\usepackage{logic}
+\usepackage{booktabs}
+
+% Show answers
+\noprintanswers % Question Paper
+% \printanswers % Solution Paper
+
+% Document info
+\title{\textbf{练习题（一）：逻辑学基础}}% \\[0.25em] {\Large 第一周：数学基础}}
+\author{唯理书院2026\\精确的逻辑与模糊的意义}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\vspace{5ex}
+\section*{\centering 符号速查表}
+
+  \begin{center}
+  \begin{tabular}{cll}
+    \textbf{符号} & \textbf{名称} & \textbf{自然语言对应} \\\midrule
+    $\neg$ & 否定 & “不”、“并非” \\
+    $\land$ & 合取/逻辑与 & “并且” \\
+    $\lor$ & 析取/逻辑或 & “或者” \\
+    $\implies$ & 材料蕴含 & “如果...那么...” \\
+    $\iff$ & 双条件 & “当且仅当” \\
+    $\exists$ & 存在量词 & “存在”、“有些” \\
+    $\forall$ & 全称量词 & “所有”、“任意” \\
+    $=$ & 等词 & “等于”、“就是” \\
+  \end{tabular}
+  \end{center}
+
+
+
+\clearpage
+\questionsection{命题逻辑}
+
+\begin{questions}
+
+  \question 请自己定义命题字母（如$P$、$Q$），并将下列语句形式化。
+  \begin{parts}
+    \part 外面在下雨，但我没带伞。
+    \part 你要么道歉，要么离开。
+    \part 除非你道歉，否则我不会原谅你。
+    \part 他并非既聪明又勤奋。
+  \end{parts}
+  \vspace{3in}
+  
+  \question 写出$\neg P \lor Q$的完整真值表。
+  \vspace{2in}
+  
+  \question 写出$(P \implies Q) \land (Q \implies P)$的真值表，并比较它和$P \iff Q$的真值表。两者是否等价？
+  
+\end{questions}
+
+
+
+\questionsection{一阶逻辑}
+
+\begin{questions}
+  
+  \question 给定公式：
+    \[ \pred{Loves}(a, b) \land \exists x (\pred{Student}(x) \land \pred{Smart}(x)) \]
+    请指出：哪些是常量、哪些是变量、哪些是谓词，以及$\exists x$的辖域（scope）具体是哪一部分？
+  \vspace{1.5in}
+  
+  \question 请自己定义谓词（如$P$、$Q$），并将下列语句形式化。每句形式化语句应当只使用一个量词。
+  \begin{parts}
+    \part 所有的猫都是动物。
+    \part 有些学生没有完成作业。
+    \part 只有努力学习的人才能通过考试。
+  \end{parts}
+  \vspace{2.5in}
+  
+  \question 给定这句话：“每个人都爱着一个人。”已知这句话具有歧义，可以有两种解读。
+  \begin{parts}
+    \part 用自然语言写出这句话两种不同的解读。
+    \part 分别形式化对于这句话两种不同的解读。
+    \part 日常语境下，你觉得哪种读法更自然？为什么逻辑学本身不能替我们决定这件事？
+  \end{parts}
+  \clearpage
+  
+  \question 引入等词“$=$”后，我们可以用逻辑语句表达“有多少个”的信息，而不只是“存在”和“所有”。
+  \begin{parts}
+    \part 请尝试形式化“最多只有一个”这一概念。你可以使用$Px$作为一个
+    \part 请尝试形式化“有且恰好只有一个”这一概念。
+    \part 请形式化语句：“地球只有一个天然卫星。”
+    \part \em{（选做）}请尝试形式化“有且恰好有两个”这一概念。
+  \end{parts}
+
+
+  
+\end{questions}
+
+
+
+
+
+
+\end{document}
