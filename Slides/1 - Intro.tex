@@ -8,7 +8,7 @@
 \date{\today}
 \date{2026年7月20日}
 \author{于佳铭}
-\institute{唯理中国2026试讲}
+\institute{唯理书院2026\\精确的逻辑与模糊的意义}
 
 \begin{document}
 
@@ -56,11 +56,11 @@
   
   \vspace{1em}
   \begin{quote}
-    天空和草地是同一个颜色。
+    天空和草地是同一种颜色。
   \end{quote}
   \pause
   \bit
-    \item 中文里区分“蓝”“绿”，而古日语里只用“青”一种颜色\footnote[frame]{\url{https://en.wikipedia.org/wiki/Blue\%E2\%80\%93green_distinction_in_language}}
+    \item 中文里区分“蓝”“绿”，而古日语里只用“青”一种颜色\footnote<.->[frame]{\url{https://en.wikipedia.org/wiki/Blue\%E2\%80\%93green_distinction_in_language}}
     \item 语言在描述世界的同时也在构建我们对世界的理解
   \eit
 
@@ -185,19 +185,19 @@
     1 & 0 \\
     0 & 1
   \end{tabular}
-  \quad
+  \qquad
   \begin{tabular}{c|cc}
     $\land$ & 1 & 0 \\\hline
     1 & 1 & 0 \\
     0 & 0 & 0
   \end{tabular}
-  \quad
+  \qquad
   \begin{tabular}{c|cc}
     $\lor$ & 1 & 0 \\\hline
     1 & 1 & 1 \\
     0 & 1 & 0
   \end{tabular}
-  \quad
+  \qquad
   \begin{tabular}{c|cc}
     $\implies$ & 1 & 0 \\\hline
     1 & 1 & 0 \\
@@ -217,8 +217,8 @@
   \end{quote}
   \vspace{0.5em}\pause
   \begin{quote}
-    $R \implies S,\ S$ \\
-    $\therefore R$
+    $\quad R \implies S,\ S$ \\
+    $\quad \therefore R$
   \end{quote}
   
   \vspace{1em}\pause
@@ -249,15 +249,30 @@
 \end{frame}
 
 
+\begin{frame}{一阶逻辑元素}
+  
+  \bit
+    \item \term{谓词}{predicate}：$P, Q, R, \dots$
+    \item \term{常量}{constant}：$a, b, c, \dots$
+    \item \term{变量}{variable}：$x, y, z, \dots$
+  \eit
+  \pause
+  我们会使用希腊字母$\phi, \psi, \dots$来指代完整的一阶逻辑句子。
+  
+\end{frame}
+
+
 \begin{frame}{一阶逻辑形式化}
 
   \begin{quote}
     一个男人抽烟。
+    \pause\hfill
+    $\exists x \left( \pred{Man}(x) \land \pred{Smokes}(x) \right)$
   \end{quote}
   
   \vspace{1em}\pause
   \begin{quote}
-    每个孩子都拥有一些玩具。
+    只要是孩子就有喜欢的玩具。
   \end{quote}
   
   \vspace{1em}\pause

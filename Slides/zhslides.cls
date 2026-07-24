@@ -50,6 +50,7 @@
 %\RequirePackage{enumitem}
 \RequirePackage[theorems,breakable,skins]{tcolorbox}
 \RequirePackage[nameinlink]{cleveref}
+\RequirePackage{booktabs}
 \RequirePackage{contour}
 \RequirePackage{ulem}
 \RequirePackage{soul}
@@ -166,6 +167,9 @@
 \newtcbtheorem[number within=section]{proposition}{命题}{
   basicstyle=green,
 }{prop}
+\newtcbtheorem[number within=section]{mydefn}{定义}{
+  basicstyle=defcolor,
+}{def}
 \newtcbtheorem[number within=section]{mytheorem}{命题}{
   basicstyle=ocean,
 }{thm}
@@ -181,6 +185,8 @@
 }{bs}
 
 % Weird workaround for redefining existing environments
+\renewenvironment{definition}[1]{\begin{mydefn}{#1}}{\end{mydefn}}
+\newenvironment{definition*}[1]{\begin{mydefn*}{#1}}{\end{mydefn*}}
 \renewenvironment{theorem}[1]{\begin{mytheorem}{#1}}{\end{mytheorem}}
 \renewenvironment{example}[1]{\begin{myexample}{#1}}{\end{myexample}}
 
@@ -266,6 +272,18 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\CC}{\mathbb{C}}
+
+% Uncover braces only
+\newcommand<>{\uncoverubrace}[2]{%
+  \onslide#3 \underbrace{ \onslide<1->%
+  #1%
+  \onslide#3 }_{#2} \onslide<1->%
+}
+\newcommand<>{\uncoverobrace}[2]{%
+  \onslide#3 \overbrace{ \onslide<1->%
+  #1%
+  \onslide#3 }^{#2} \onslide<1->%
+}
 
 
 
