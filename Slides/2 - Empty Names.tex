@@ -1,0 +1,174 @@
+\documentclass{zhslides}
+
+\usepackage{logic}
+
+
+\title{Day 2: 空名与摹状词理论}
+%\subtitle{}
+\date{\today}
+\date{2026年7月21日}
+\author{于佳铭}
+\institute{唯理书院2026\\精确的逻辑与模糊的意义}
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{目录}
+%  \tableofcontents
+%\end{frame}
+
+% 可以用 \alert{} 来高亮
+
+
+
+\section{空名问题}
+
+\begin{frame}{专名与指称}
+
+  \begin{brainstorm*}{}
+    以下词的意义是什么？\\
+    “亚里士多德”“孙悟空”“鲁迅”“周树人”“巴黎”
+  \end{brainstorm*}
+  \vspace{1em}
+  \pause
+
+  \bit
+    \item \term{专名}{proper name}可以用来直接标记某个特定对象
+    \item 专名不作任何的描述
+    \item 专名通过直接\term{指称}{reference}来标记它们的对象，它们的意义即它们的指称\footnote<.->[frame]{这是最简单的关于专名的Millian诠释。详见Mill, Frege, Russell, Kripke各自对于专名不同的理论。}
+  \eit
+
+\end{frame}
+
+
+\begin{frame}{专名的意义}
+
+  如果专名仅仅只是一个对象的标记，会带来什么问题？
+  
+  \bit
+    \item “周树人是鲁迅”
+    \item “张三不觉得周树人是一个好的作家”
+    \item \alert<5->{“福尔摩斯住在贝克街221B”}
+    \item \alert<5->{“孙悟空不存在”}
+  \eit
+
+\end{frame}
+
+
+\begin{frame}{空名问题}
+  
+  \begin{columns}
+  \begin{column}{0.4\textwidth}
+    $\because$ 孙悟空是一只猴子
+    
+    $\therefore$ 存在一只猴子
+  \end{column}
+  \begin{column}{0.4\textwidth}
+    $\because$ 圣诞老人不存在
+    
+    $\therefore$ 存在一个不存在的对象
+  \end{column}
+  \end{columns}
+  \vspace{2em}
+  \pause
+  
+  \begin{brainstorm*}{}
+    我们该如何解决空名问题？
+  \end{brainstorm*}
+  
+\end{frame}
+
+
+\begin{frame}{迈农的自由逻辑}
+  
+  \textbf{迈农的自由逻辑}
+  \bit
+    \item 所有被思及的对象都有某种\term{存在}{Sein}方式，可以是\term{现实存在}{Existenz}或\term{“如此存在”\!\!\!}{Sosein}
+    \item 
+  \eit
+
+\end{frame}
+
+
+
+
+
+\section{摹状词理论}
+
+\begin{frame}{摹状词}
+  
+  \term{摹状词}{description}借助修饰语来描述并指代特定对象
+  
+  \pause
+  \begin{center}
+  \begin{tabular}{rcl}
+    “亚里士多德” & “柏拉图最著名的学生”\\
+    “孙悟空” & “大闹天宫的罪魁祸首”\\
+    “鲁迅”“周树人” & “《朝花夕拾》的作者”\\
+    “巴黎” & “法国的首都”
+  \end{tabular}
+  \end{center}
+  \pause
+  
+  \begin{brainstorm*}{}
+    摹状词的意义是什么？
+  \end{brainstorm*}
+
+\end{frame}
+
+
+\begin{frame}{限定摹状词}
+  
+  \vspace{2em}
+  \bit
+    \item \term{限定摹状词}{definite description}是指代某特定、唯一对象的摹状词
+    \item 一般来说，英文中``the...''开头的名词短语是限定摹状词
+  \eit
+  
+  \pause
+  \begin{center}
+  \begin{tabular}{cc}
+    \textbf{专名} & \textbf{限定摹状词} \\\midrule
+    “亚里士多德” & “柏拉图最著名的学生” \\
+    “孙悟空” & “大闹天宫的罪魁祸首” \\
+    “鲁迅”“周树人” & “《朝花夕拾》的作者” \\
+    “巴黎” & “法国的首都” \\\pause
+    ？ & “当今法国国王” \\\pause
+    ？？？ & “那只八只翅膀、隐形的粉色大象” \\\pause
+    ？？？？？ & “圆的方块”
+  \end{tabular}
+  \end{center}
+  
+\end{frame}
+
+
+\begin{frame}{空的限定摹状词}
+  
+  \begin{brainstorm*}{}
+    空的限定摹状词和空名有何异同？ 
+  \end{brainstorm*}
+  
+\end{frame}
+
+
+\begin{frame}{罗素的摹状词理论}
+  \bit
+    \item 罗素的激进观点：{限定摹状词不是指称表达式，而是量化逻辑语句的缩写}
+    \item 例如“当今法国国王是秃头”应当被理解为：
+      \[ \exists x \Big( \!\! \uncoverubrace<3->{\alert<3>{\pred{King}(x)}}{\text{$x$是法国国王}} \land\; \uncoverubrace<4->{\alert<4>{\forall y (\pred{King}(y) \implies x = y)}}{\text{$x$是唯一的法国国王}} \;\land\, \uncoverubrace<5->{\alert<5>{\pred{Bald}(x)}}{\text{$x$是秃头}} \Big) \]
+    \item<2-> 诡异至极！
+  \eit
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
