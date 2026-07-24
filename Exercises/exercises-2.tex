@@ -1,0 +1,161 @@
+\documentclass{quiz}
+\usepackage{logic}
+\usepackage{booktabs}
+
+% Show answers
+\noprintanswers % Question Paper
+% \printanswers % Solution Paper
+
+% Document info
+\title{\textbf{练习题（二）：多值逻辑}}
+\author{唯理书院2026\\精确的逻辑与模糊的意义}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\vspace{5ex}
+\section*{\centering 符号速查表}
+
+  \begin{center}
+  \begin{tabular}{cll}
+    \textbf{符号} & \textbf{名称} & \textbf{自然语言对应} \\\midrule
+    $\neg$ & 否定 & “不”、“并非” \\
+    $\land$ & 合取/逻辑与 & “并且” \\
+    $\lor$ & 析取/逻辑或 & “或者” \\
+    $\implies$ & 材料蕴含 & “如果...那么...” \\
+    $\iff$ & 双条件 & “当且仅当” \\
+    $\exists$ & 存在量词 & “存在”、“有些” \\
+    $\forall$ & 全称量词 & “所有”、“任意” \\
+    $=$ & 等词 & “等于”、“就是” \\
+  \end{tabular}
+  \end{center}
+
+
+\vspace{2ex}
+\section*{\centering 武卡谢维奇真值表}
+\vspace{-1.5ex}
+
+%  \begingroup
+%  \setlength{\tabcolsep}{4pt}
+  \begin{table}[h]
+  \centering
+    \begin{tabular}{c|c}
+      $\neg$ & \\\hline
+      1 & 0 \\
+      0 & 1 \\
+      \hash & \hash
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\land$ & 1 & 0 & \hash \\\hline
+      1 & 1 & 0 & \hash \\
+      0 & 0 & 0 & 0 \\
+      \hash & \hash & 0 & \hash
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\lor$ & 1 & 0 & \hash \\\hline
+      1 & 1 & 1 & 1 \\
+      0 & 1 & 0 & \hash \\
+      \hash & 1 & \hash & \hash
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc}
+      $\implies$ & 1 & 0 & \hash \\\hline
+      1 & 1 & 0 & \hash \\
+      0 & 1 & 1 & 1 \\
+      \hash & 1 & \hash & 1
+    \end{tabular}
+  \end{table}
+%  \endgroup
+
+
+\vspace{1ex}
+\section*{\centering 克莱尼真值表}
+\vspace{-1.5ex}
+
+%  \begingroup
+%  \setlength{\tabcolsep}{4pt}
+  \begin{table}[h]
+  \centering
+    \begin{tabular}{c|ccc}
+      $\implies$ & 1 & 0 & \hash \\\hline
+      1 & 1 & 0 & \hash \\
+      0 & 1 & 1 & 1 \\
+      \hash & 1 & \hash & \hash
+    \end{tabular}
+  \end{table}
+%  \endgroup
+
+
+\clearpage
+\begin{questions}
+
+  \question \textbf{热身：}用真值表证明下列语句在二元逻辑中是重言式：
+  \begin{parts}
+    \part $\neg(\phi \land \neg\phi)$
+    \part $(\phi \implies \psi) \lor (\psi \implies \phi)$
+    \part $\neg\phi \implies (\phi \implies \psi)$
+  \end{parts}
+
+\end{questions}
+
+
+
+\questionsection{三值逻辑}
+
+在三值逻辑中，任何命题$P$可以取$\set{1, 0, \hash}$中的真值。
+
+\begin{questions}
+
+  \question 用武卡谢维奇的逻辑系统，写出下式完整的真值表（应包含$P, Q$全部$9$种赋值组合）：
+    \[ (P \implies Q) \lor (Q \implies P) \]
+  
+  \vspace{2.5in}
+  
+  \question 分别使用武卡谢维奇和克莱尼真值表，计算出以下式子在$P = \hash$时的真值。
+  \begin{parts}
+    \part $P \implies P$
+    \part $(P \implies P) \land (P \implies P)$
+    \part $P \lor \neg P$
+  \end{parts}
+  \clearpage
+  
+  \question 构造一个式子，满足：
+  \begin{itemize}
+    \item 在武卡谢维奇逻辑中是永真式（所有赋值下真值都为$1$）
+    \item 在克莱尼逻辑中不是永真式（至少存在一种赋值使其真值$\neq 1$）
+  \end{itemize}
+  写出该式子，并分别给出两个完整的真值表来证明其满足条件。
+  \vspace{3in}
+  
+  \question \em{（选做）}克莱尼逻辑中是否存在任何永真式？请给出一个具体例子，或证明不存在。
+  
+\end{questions}
+
+
+
+\questionsection{超赋值逻辑}
+
+记“张三是高的”为$P$。假设所有容许的精细化方式，是把“高”的身高门槛设定为$175$cm到$185$cm之间（含端点）的任意整数厘米值。已知张三身高$179$cm，李四身高$183$cm。
+
+\begin{questions}
+  
+  \question 在上述精细化集合下，$P$在哪些精细化下为真？哪些为假？$P$是超真、超假，还是既非又非？
+  \vspace{2in}
+  
+  \question 考虑式子$P \lor \neg P$（“张三是高的，或张三不是高的”）。这句式子是超真、超假，还是既非又非？
+  \vspace{2in}
+  
+  \question 记$Q$为“李四是高的”。考虑条件句$P \implies Q$（“如果张三是高的，那么李四也是高的”）。这句式子是超真、超假，还是既非又非？
+
+
+  
+\end{questions}
+
+
+
+
+\end{document}
