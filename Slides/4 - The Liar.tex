@@ -1,0 +1,134 @@
+\documentclass{zhslides}
+
+\usepackage{logic}
+
+
+\title{Day 4: 说谎者悖论}
+%\subtitle{}
+\date{\today}
+\date{2026年7月23日}
+\author{于佳铭}
+\institute{唯理书院2026\\精确的逻辑与模糊的意义}
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{目录}
+%  \tableofcontents
+%\end{frame}
+
+% 可以用 \alert{} 来高亮
+
+
+
+\begin{frame}
+  
+  \begin{quote}
+    这句话是假的。
+  \end{quote}
+  
+\end{frame}
+
+
+
+\section{说谎者悖论}
+
+\begin{frame}{真理理论}
+  
+  塔斯基的形式化真理理论：
+  
+  \begin{law*}{T-schema}
+    语句{``$P$\,\textquotedblright}为真当且仅当$P$。
+  \end{law*}
+  \vspace{4ex}
+  \pause
+  
+  \begin{quote}
+    $(L)$\quad $L$是假的。
+  \end{quote}
+  \pause
+  应用T-schema得到：$L$为真，当且仅当$L$是假的。\contradiction
+  
+\end{frame}
+
+
+\begin{frame}{塔斯基的语言层级}
+  
+  \bit
+    \item 说谎者悖论来源于语言的自指性
+    \item 放弃自然语言的封闭性，区分\term{元语言}{metalanguage}和\term{对象语言}{object language}
+  \eit
+  \vspace{4ex}
+  \pause
+  
+  \begin{quote}
+    'Schnee ist wei\ss' is true if and only if snow is white.
+  \end{quote}
+  
+\end{frame}
+
+
+\begin{frame}[t]{多值逻辑与说谎者悖论}
+
+  \vspace{4ex}
+  \begin{brainstorm*}{}
+    三值逻辑能否解答说谎者悖论？
+  \end{brainstorm*}
+  \vspace{2ex}
+  \pause
+  
+  \bit
+    \item 克里普克(Kripke)：真值\term{缝隙}{gap}
+    \item 说谎者句子在这个理论下不处于任何层级，因此真值不被确定——非真也非假
+  \eit
+  \vspace{2ex}
+  \pause
+  
+  复仇悖论：
+  \begin{quote}
+    $(L^+)$\quad $L^+$不是真的。
+  \end{quote}
+
+\end{frame}
+
+
+
+\section{双面真理论}
+
+\begin{frame}{爆炸原理}
+  
+  \begin{law*}{矛盾律, LNC}
+    对于任意语句 $\phi$，$\neg(\phi \land \neg \phi)$ 是永真式。
+  \end{law*}
+  \vspace{1ex}
+  \pause
+  
+  一旦矛盾律不被满足，根据爆炸原理就可以得出一切结论为真。
+  
+  \begin{law*}{爆炸原理, Principle of explosion}
+    对于任意命题$P$和$Q$，如果$P$和$\neg P$同时为真，那么可以推导出$Q$为真。
+  \end{law*}
+  这就是著名的拉丁短语``\textit{Ex falso quodlibet}'' (from falsehood, anything follows)
+  
+\end{frame}
+
+
+\begin{frame}{双面真理论}
+  
+  \bit
+    \item 普里斯特（Priest）：说谎者句子是真值\term{溢出}{glut}而非缝隙
+    \item 放弃矛盾律，转而使用\term{次协调逻辑}{paraconsistent logic}，例如普利斯特的Logic of Paradox (LP)
+  \eit
+  
+\end{frame}
+
+
+
+
+
+
+
+
+
+\end{document}
