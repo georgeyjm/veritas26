@@ -1,0 +1,216 @@
+\documentclass{zhslides}
+
+\usepackage{logic}
+
+
+\title{Day 5: 模态逻辑与可能世界语义}
+%\subtitle{}
+\date{\today}
+\date{2026年7月23日}
+\author{于佳铭}
+\institute{唯理书院2026\\精确的逻辑与模糊的意义}
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{目录}
+%  \tableofcontents
+%\end{frame}
+
+% 可以用 \alert{} 来高亮
+
+
+
+\section{必然性与模态逻辑}
+
+\begin{frame}{必然性与偶然性}
+
+  \begin{quote}
+    所有天鹅都是白的。
+  \end{quote}
+  \vspace{1em}
+  \begin{quote}
+    特朗普是美国总统。
+  \end{quote}
+  \vspace{1em}
+  \begin{quote}
+    所有单身汉都未婚。
+  \end{quote}
+  \vspace{1em}
+  \begin{quote}
+    $2+2=4$
+  \end{quote}
+  \vspace{1em}
+  \pause
+  
+  区分\term{必然性}{necessity}与\term{偶然性}{contingency}
+
+\end{frame}
+
+
+\begin{frame}{模态算子}
+  
+  \begin{table}[h]
+  \centering
+  {\renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{llc}
+    \textbf{自然语言对应} & \textbf{名称} & \textbf{逻辑符号} \\\hline
+    必然/一定 & 必然算子 & $\Box$ \\\pause
+    偶然/可能 & 偶然算子 & $\Diamond$ \\
+  \end{tabular}
+  }
+  \end{table}
+  
+\end{frame}
+
+
+\begin{frame}{模态算子}
+  
+  \begin{table}[h]
+  \centering
+  {\renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{lll}
+    \textbf{逻辑系统} & \textbf{$\Box$对应含义} & \textbf{$\Diamond$对应含义} \\\hline
+    \term{真势逻辑}{Alethic logic} & 必然地 & 偶然地 \\\pause
+    \term{道义逻辑}{Deontic logic} & 应当 & 许可 \\\pause
+    \term{认识逻辑}{Epistemic logic} & 知道/确信 & 与现有信念不违背 \\\pause
+    \term{时态逻辑}{Temporal logic} & 所有时刻成立 & 某一时刻成立 \\
+  \end{tabular}
+  }
+  \end{table}
+  
+\end{frame}
+
+
+\begin{frame}{模态逻辑关系}
+
+  \begin{brainstorm*}{}
+    对于任何式子$\phi$，以下式子是否应该为真？
+    \begin{itemize}
+      \item $\phi \implies \Diamond\phi$
+      \item $\phi \implies \Box\Diamond\phi$ \hfill \textbf{(B)}
+      \item $\Box\phi \implies \phi$ \hfill \textbf{(T)}
+      \item $\Box\phi \implies \Diamond\phi$ \hfill \textbf{(D)}
+      \item $\Box\phi \implies \Box\Box\phi$ \hfill \textbf{(4)}
+      \item $\Diamond\phi \implies \Box\Diamond\phi$ \hfill \textbf{(5)}
+    \end{itemize}
+  \end{brainstorm*}
+
+\end{frame}
+
+
+
+\section{可能世界语义学}
+
+\begin{frame}{可能世界}
+  
+  \bit
+    \item 克里普克提出用\term{可能世界}{possible world}去形式化模态算子的语义。
+    \item $\Box P$为真当且仅当$P$在所有可能世界中为真
+    \item $\Diamond P$为真当且仅当$P$在某个可能世界中为真
+  \eit
+  \vspace{1.5em}
+  \pause
+  
+  \begin{brainstorm*}{}
+    “我是蜥蜴”是否在某个可能世界中为真？\\
+    “光速是$3$米每秒”是否在某个可能世界中为真？\\
+    “$2+2=5$”是否在某个可能世界中为真？
+  \end{brainstorm*}
+  \vspace{-1em}
+
+\end{frame}
+
+
+\begin{frame}{可及关系}
+  
+  \term{可及关系}{accessibility}形式化了认知兼容性/逻辑相容性/备选状态
+  
+  \bit
+    \item $\Box P$在世界$w$中真当且仅当$P$在所有从$w$可及的世界中为真
+    \item $\Diamond P$在世界$w$中真当且仅当$P$在某个从$w$可及的世界中为真
+  \eit
+  \pause
+  
+  可及关系决定了不同模态概念的语义区分。
+  
+  注意，此时逻辑真值不再是绝对的，而是相对于某个世界$w$的。
+  
+\end{frame}
+
+
+\begin{frame}{可及关系}
+  
+  \begin{definition*}{}
+    一个可能世界语义的模态逻辑框架$\oset{\struct{W}, \struct{R}}$包含：
+    \begin{itemize}
+      \item 所有可能世界的集合$\struct{W}$
+      \item 所有可及关系的集合$\struct{R}$
+    \end{itemize}
+    如果世界$v$从$w$可及，记作$w\struct{R}v$。
+  \end{definition*}
+  
+\end{frame}
+
+
+\begin{frame}{可及关系的性质}
+  
+  可及关系可以满足一些特定的性质：
+  
+  \bit
+    \item \term{自反性}{reflexivity}：$w\struct{R}w$
+    \item \term{传递性}{transitivity}：如果$w\struct{R}v$以及$v\struct{R}u$，那么$w\struct{R}u$
+    \item \term{对称性}{symmetry}：如果$w\struct{R}v$，那么$v\struct{R}w$
+  \eit
+    
+\end{frame}
+
+
+\begin{frame}{可及关系的性质}
+  
+  \begin{table}[h]
+  \centering
+  {\renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{cll}
+    \textbf{逻辑系统} & \textbf{$\struct{\boldsymbol{R}}$的性质} & \textbf{对应公理} \\\hline
+    K &  &  \\\pause
+    T & 自反 & $\Box\phi \implies \phi$ \\\pause
+    S4 & 自反+传递 & $\Box\phi \implies \Box\Box\phi$ \\\pause
+    S5 & 自反+传递+对称 & $\Diamond\phi \implies \Box\Diamond\phi$ \\
+  \end{tabular}
+  }
+  \end{table}
+  
+\end{frame}
+
+
+\begin{frame}{可能世界的形而上学}
+  
+  什么是可能世界？
+  
+  \bit
+    \item 刘易斯（Lewis）：\term{模态实在论}{modal realism}
+    \item \term{现实主义}{actualism}
+  \eit
+  \pause
+  
+  可能世界之间的同一性如何维系？
+  
+  \bit
+    \item 克里普克：\term{固定指示词}{rigid designator}
+    \item 刘易斯：\term{对应者理论}{counterpart theory}
+  \eit
+  
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\end{document}
