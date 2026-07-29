@@ -13,6 +13,7 @@
 \newcommand{\struct}[1]{\mathcal{#1}}
 \newcommand{\tostruct}[2]{#1^\struct{#2}}
 \newcommand{\valunder}[2]{\abs{#1}_\struct{#2}}
+\newcommand{\interp}{\struct{I}}
 \newcommand{\SQ}{\mathrm{SQ}}
 
 \newcommand{\true}{\textit{T}}
@@ -47,6 +48,22 @@
 \DeclareMathOperator{\consts}{Const}
 \DeclareMathOperator{\free}{Free}
 \DeclareMathOperator{\theory}{Th}
+\DeclareMathOperator{\SV}{SV}
+
+\newcommand{\boxcf}{%
+  \mathrel{\mathop\Box}\mathrel{\mkern-2.5mu}\rightarrow
+}
+\newcommand{\diamondcf}{%
+  \mathrel{\mathop\Diamond}\mathrel{\mkern-2.8mu}\rightarrow
+}
+%\newcommand{\strictimplies}{%
+%  \mathrel{\mathop\implies}\mathrel{\mkern-5mu}\strictif
+%}
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
+\newcommand{\strictimplies}{\strictif}
+\newcommand{\near}{\preccurlyeq}
+
 
 %\newlist{axioms}{enumerate}{1}
 %\setlist[axioms]{label=\textbf{A\arabic*},left=1em,labelsep=1em}

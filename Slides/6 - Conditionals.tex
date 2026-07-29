@@ -1,0 +1,154 @@
+\documentclass{zhslides}
+
+\usepackage{logic}
+
+
+\title{Day 8: 条件句}
+%\subtitle{}
+\date{\today}
+\date{2026年7月28日}
+\author{于佳铭}
+\institute{唯理书院2026\\精确的逻辑与模糊的意义}
+
+\begin{document}
+
+\maketitle
+
+%\begin{frame}{目录}
+%  \tableofcontents
+%\end{frame}
+
+% 可以用 \alert{} 来高亮
+
+
+
+\begin{frame}{实质蕴涵的问题}
+
+  \begin{quote}
+    如果$\underbrace{\text{月亮是奶酪做的}}_{\term{前件}{antecedent}}$ ，那么$\hspace{-0.8em}\underbrace{2+2=5}_{\term{后件}{consequent}}\hspace{-0.7em}$。
+  \end{quote}
+  \vspace{1em}
+  \pause
+  这是\term{空虛的真}{vacuous truth}！
+  \vspace{1.5em}
+  \pause
+  
+  \begin{brainstorm*}{}
+    自然语言中有哪些不符合实质蕴涵语义的条件句？
+  \end{brainstorm*}
+  
+\end{frame}
+
+
+\begin{frame}{条件句语气}
+  
+  \term{陈述语气}{indicative mood}
+  \vspace{-1ex}
+  \begin{itemize}
+    \item<2-> If Oswald didn't kill Kennedy, someone else did.
+    \item<3-> If I catch the bus, I will be on time.
+    \item<4-> 如果没下雨，我们可以准时到。
+  \end{itemize}
+  
+  \term{虚拟语气}{subjunctive mood}
+  \vspace{-1ex}
+  \begin{itemize}
+    \item<2-> If Oswald hadn't killed Kennedy, someone else would have.
+    \item<3-> If I had caught the bus, I would have been on time.
+    \item<4-> 要不是下了雨，我们本可以准时到。
+    \item<4-> 要是我们赶上了车，我们也不能准时到。
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{严格条件句}
+  
+  \bit
+    \item 刘易斯：将条件句形式化为必然的实质蕴涵
+    \item 严格条件句记为 $A \strictimplies C \defeq \Box(A \implies C)$
+    \item 保留了MP、传递性、逆否等性质
+    \item 如果前件为必然矛盾，或后件为必然真理时，仍然有问题
+  \eit
+
+\end{frame}
+
+
+\begin{frame}{假设理论和概率语义}
+  
+  \bit
+    \item \term{拉姆齐测试}{Ramsey test}：判断$A \implies C$时，我们先将$A$加入信念集，做最小限度的调整后，检验$C$是否成立
+    \item 条件句的\term{可接受度}{assertability}判断的不是$A \implies C$的概率，而是条件概率$P(C \mid A)$
+    \item 刘易斯的\term{平凡化}{triviality}：条件句可能根本不表达一个具有真值条件的命题，更像是某种断言
+  \eit
+
+\end{frame}
+
+
+
+\section{反事实条件句}
+
+\begin{frame}{反事实条件句}
+  
+  陈述条件句：\\
+  \quad If Oswald didn't kill Kennedy, someone else did.
+  \vspace{1ex}
+  
+  反事实条件句：\\
+  \quad If Oswald \em<2->{hadn't} killed Kennedy, someone else \em<2->{would have}.
+  
+  \vspace{2em}
+  \pause
+  逻辑符号：$P \boxcf Q$
+  
+\end{frame}
+
+
+\begin{frame}{反事实条件句的特殊性}
+  
+  \bit
+    \item 前件为假，整句仍然可能为真
+    \item \term{逆否命题}{contraposition}不保全真值
+      \bit
+        \item 实质蕴含中，如果$A \implies C$，那么$\neg C \implies \neg A$
+        \item 假设Bob想见Adam，但是Adam想避开Bob。\\
+              If Adam had gone to the party, Bob would have gone.\\
+              If Bob hadn't gone to the party, Adam wouldn't have gone.
+      \eit
+    \item \term{前件增强}{augmentation}不保全真值
+      \bit
+        \item 实质蕴含中，如果$A \implies C$，那么$(A \land B) \implies C$
+        \item If I had struck the match, it would have lit.\\
+              If I had struck the match and it was wet, it would have lit.
+      \eit
+  \eit
+  
+\end{frame}
+
+
+\begin{frame}{反事实条件句理论}
+  
+  \bit
+    \item Stalnaker和Lewis：反事实条件句为真当且仅当后件在某个前件为真的可能世界中为真
+    \item 但同时，考虑的可能世界不能和现实世界有太大差异
+    \item 定义可能世界的相似性关系：$x \near_w y$指$x$相比$y$与$w$更相似
+    \item $P \boxcf Q$在$w$中为真，当且仅当$Q$在与$w$最相似的$P$为真的世界中为真
+  \eit
+  
+\end{frame}
+
+
+\begin{frame}
+
+  \textbf{\LARGE{\centering 谢谢大家！}}
+  \[ \forall x (\pred{LogicStudent}(x) \implies \pred{Thank}(yjm, x)) \]
+
+\end{frame}
+
+
+
+
+
+
+
+\end{document}
