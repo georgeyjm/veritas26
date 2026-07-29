@@ -1,0 +1,78 @@
+\documentclass{quiz}
+\usepackage{logic}
+\usepackage{booktabs}
+
+% Show answers
+\noprintanswers % Question Paper
+% \printanswers % Solution Paper
+
+% Document info
+\title{\textbf{练习题（三）：模态逻辑}}
+\author{唯理书院2026\\精确的逻辑与模糊的意义}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\vspace{5ex}
+\section*{\centering 符号速查表}
+
+  \begin{center}
+  \begin{tabular}{cll}
+    \textbf{符号} & \textbf{名称} & \textbf{自然语言对应} \\\midrule
+    $\neg$ & 否定 & “不”、“并非” \\
+    $\land$ & 合取/逻辑与 & “并且” \\
+    $\lor$ & 析取/逻辑或 & “或者” \\
+    $\implies$ & 材料蕴含 & “如果...那么...” \\
+    $\iff$ & 双条件 & “当且仅当” \\
+    $\exists$ & 存在量词 & “存在”、“有些” \\
+    $\forall$ & 全称量词 & “所有”、“任意” \\
+    $\Box$ & 必然算子 & “必然”、“肯定” \\
+    $\Diamond$ & 偶然算子 & “可能”、“偶然” \\
+    $=$ & 等词 & “等于”、“就是”
+  \end{tabular}
+  \end{center}
+
+
+
+\questionsection{模态逻辑}
+
+\begin{questions}
+
+  \question 判断下列语句是必然为真、偶然为真、还是必然为假。
+  \begin{parts}
+    \item 单身汉都是未婚的。
+    \item 光速约为每秒 30 万公里。
+    \item 存在质数大于一百万。
+    \item 若一个三角形三边相等，则三个内角相等。
+  \end{parts}
+  \vspace{2.5in}
+  
+  \question 将下列语句形式化，在需要时标注你所使用的是哪种模态系统（真势/道义/认识/时态逻辑）。
+  \begin{parts}
+    \item 你必须归还借的书。
+    \item 根据我目前所知，明天可能下雨。
+    \item 地球总有一天会被太阳吞没。
+    \item 不允许闯红灯。
+  \end{parts}
+  \clearpage
+  
+  \question 给定框架$\oset{\struct{W}, \struct{R}}$，其中$\struct{W} = \set{w_1, w_2, w_3}$，可及关系为$w_1\struct{R}w_2, w_1\struct{R}w_3, w_2\struct{R}w_3, w_3\struct{R}w_3$。\\赋值如下：$P$在$w_2$为真、在$w_1, w_3$为假；$Q$在$w_1, w_2, w_3$均为真。
+  \begin{parts}
+    \item 判断$\Box P$在$w_1$中是否为真？
+    \item 判断$\Diamond P$在$w_1$中是否为真？
+    \item 判断$\Box Q$在$w_1$中是否为真？
+    \item 判断$\Box(P \implies Q)$在$w_1$中是否为真？
+    \item 判断$P \implies \Box Q$在$w_1$中是否为真？
+  \end{parts}
+  \vspace{3.5in}
+  
+  \question 尝试论证具备自反性的可及关系一定满足$\Box P \implies P$。
+  
+\end{questions}
+
+
+
+
+\end{document}
